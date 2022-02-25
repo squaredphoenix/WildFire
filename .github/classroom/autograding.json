@@ -1,0 +1,44 @@
+{
+	"tests": [
+	{
+		"name": "test # 1",
+			"setup": "",
+			"run": "make clean test-1-wildfire",
+			"input": "",
+			"output": "All tests passed (3 assertions in 2 test cases)",
+			"comparison": "included",
+			"timeout": 10,
+			"points": 15
+	},
+	{
+		"name": "test # 2",
+		"setup": "",
+		"run": "make clean test-2-wildfire",
+		"input": "",
+		"output": "All tests passed (4 assertions in 2 test cases)",
+		"comparison": "included",
+		"timeout": 10,
+		"points": 15
+	},
+	{
+		"name": "test # 3",
+		"setup": "",
+		"run": "make clean test-3-wildfire",
+		"input": "",
+		"output": "All tests passed (1 assertion in 1 test case)",
+		"comparison": "included",
+		"timeout": 10,
+		"points": 10
+	},
+	{
+		"name": "Memory leak check",
+		"setup": "(valgrind --version || (sudo apt-get update -y && sudo apt-get install -y valgrind)) && make test-3-wildfire",
+		"run": "valgrind --leak-check=full --error-exitcode=1 test/test-3-wildfire",
+		"input": "",
+		"output": "",
+		"comparison": "included",
+		"timeout": 10,
+		"points": 10
+	}
+	]
+}
