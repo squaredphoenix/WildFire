@@ -53,6 +53,11 @@ Wildfire::Wildfire(string mapfile)
 
 Wildfire::~Wildfire()
 {   
+    for(int i = 0; i < y; i++)
+    {
+        delete[] map[i];
+    }
+    
     delete[] map;
 }
 
