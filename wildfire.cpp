@@ -57,7 +57,7 @@ Wildfire::~Wildfire()
     {
         delete[] map[i];
     }
-    
+
     delete[] map;
 }
 
@@ -86,22 +86,26 @@ void Wildfire::StartFire(int startY, int startX) //x = 4, y = 5
 
             if((startX + 1) >= 0 && (startX + 1) < x && startY >= 0 && startY < y && map[startY][startX + 1] == 'T') // right
             {
-                return StartFire(startY, (startX + 1));
+                cout << "right" << endl;
+                StartFire(startY, (startX + 1));
             }
 
             if((startX - 1) >= 0 && (startX - 1) < x && startY >= 0 && startY < y && map[startY][startX - 1] == 'T') // left
             {
-                return StartFire(startY, (startX - 1));
+                cout << "left" << endl;
+                StartFire(startY, (startX - 1));
             }
 
             if(startX >= 0 && startX < x && (startY + 1) >= 0 && (startY + 1) < y && map[startY + 1][startX] == 'T') // down
             {
-                return StartFire((startY + 1), startX);
+                cout << "down" << endl;
+                StartFire((startY + 1), startX);
             }
 
             if(startX >= 0 && startX < x && (startY - 1) >= 0 && (startY - 1) < y && map[startY - 1][startX] == 'T') // up
             {
-                return StartFire((startY - 1), startX);
+                cout << "up" << endl;
+                StartFire((startY - 1), startX);
             }
         }
     }
